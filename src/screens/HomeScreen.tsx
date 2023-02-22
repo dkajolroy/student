@@ -8,39 +8,42 @@ import {
   TouchableOpacity,
 } from 'react-native';
 import {categoryData} from '../constants/data';
+import sizes from '../constants/sizes';
 
 const {width, height} = Dimensions.get('screen');
-const margin = 10;
+const margin = sizes.small;
 const container = width - margin * 2;
 export default function HomeScreen() {
   return (
-    <Flex fill m={margin} bg="#fff">
+    <Flex fill bg="#fff">
       <SafeAreaView>
-        <Wrap>
-          {categoryData.map((item, index) => (
-            <Flex
-              key={index}
-              justify="center"
-              items="center"
-              h={container / 3}
-              w={container / 3}>
-              <Box m={2}>
-                <TouchableOpacity>
-                  <Image style={styles.fileIcons} source={item.image} />
-                </TouchableOpacity>
-              </Box>
-            </Flex>
-          ))}
-        </Wrap>
+        <Box m={margin}>
+          <Wrap>
+            {categoryData.map((item, index) => (
+              <Flex
+                key={index}
+                justify="center"
+                items="center"
+                h={container / 3}
+                w={container / 3}>
+                <Box>
+                  <TouchableOpacity>
+                    <Image style={styles.fileIcons} source={item.image} />
+                  </TouchableOpacity>
+                </Box>
+              </Flex>
+            ))}
+          </Wrap>
+        </Box>
       </SafeAreaView>
     </Flex>
   );
 }
 const styles = StyleSheet.create({
   fileIcons: {
-    width: width / 4,
-    height: width / 4,
+    width: width / 5,
+    height: width / 5,
     resizeMode: 'contain',
-    borderRadius: 20,
+    borderRadius: sizes.small * 2,
   },
 });
