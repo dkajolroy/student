@@ -1,18 +1,11 @@
-import React, {useEffect} from 'react';
-import {Text, View} from 'react-native';
+import React from 'react';
 import 'react-native-gesture-handler';
+import MainNavigation from './src/navigation/MainNavigation';
 
 export default function App() {
-  const value = 2 + 2;
-  useEffect(() => {
-    if (value < 33) {
-      console.log('Kam Hoiche');
-    }
-  }, [value]);
-
   return (
-    <View>
-      <Text>App</Text>
-    </View>
+    <>
+      <MainNavigation />
+    </>
   );
 }
