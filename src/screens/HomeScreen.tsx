@@ -18,14 +18,15 @@ export default function HomeScreen() {
     <Flex fill bg="#fff">
       <SafeAreaView>
         <Box m={margin}>
+          {/* All Category Rendered */}
           <Wrap>
             {categoryData.map((item, index) => (
               <Flex
                 key={index}
                 justify="center"
                 items="center"
-                h={container / 3}
-                w={container / 3}>
+                h={container / 3 - 10}
+                w={container / 3 - 10}>
                 <Box>
                   <TouchableOpacity>
                     <Image style={styles.fileIcons} source={item.image} />
@@ -34,6 +35,7 @@ export default function HomeScreen() {
               </Flex>
             ))}
           </Wrap>
+          {/* End Category Rendered */}
         </Box>
       </SafeAreaView>
     </Flex>

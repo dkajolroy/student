@@ -1,17 +1,16 @@
-import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
-import HomeScreen from '../screens/HomeScreen';
+import DrawerNavigation from './DrawerNavigation';
 
 export default function MainNavigation() {
   const Stack = createStackNavigator();
   return (
-    <NavigationContainer>
+    <>
       <Stack.Navigator
         screenOptions={{
           headerShown: false,
         }}>
-        <Stack.Screen name="HOME" component={HomeScreen} />
+        <Stack.Screen name="Drawer" component={DrawerNavigation} />
       </Stack.Navigator>
-    </NavigationContainer>
+    </>
   );
 }
